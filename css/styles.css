@@ -1,0 +1,162 @@
+/* Starting the CSS file */
+/* Manual reset for all the elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General styles */
+body {
+    /* Variables for the colors */
+    /* Primary Colors*/
+    --darkCyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    /* Neutral Colors*/
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --darkerCyan: hsl(156, 35%, 14%);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--darkGrayishBlue);
+    background-color: var(--cream);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles for the main container and the image */
+.container {
+    width: 90vw;
+    height: 67vh;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.container figure .imagePhone {
+    width: 100%;
+    height: 100%;
+}
+
+.container figure .imageDesktop {
+    display: none;
+}
+
+
+/* Styles for the info product */
+.infoProduct {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 0 1.5rem;
+}
+
+.infoProduct .subtitle {
+    letter-spacing: 0.4em;
+    font-size: 12px;
+}
+
+.infoProduct .title {
+    font-family: "Fraunces", sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--veryDarkBlue);
+    font-weight: 700;
+}
+
+.infoProduct .prices {
+    display: flex;
+    margin-top: 0.2rem;
+    gap: 1.3rem;
+    align-items: center;
+}
+
+.infoProduct .prices .newPrice {
+    font-size: 30px;
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: var(--darkCyan);
+}
+
+.infoProduct .prices .oldPrice {
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/* Styles for the add to cart button */
+.infoProduct .addToCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background-color: var(--darkCyan);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--white);
+    height: 2.7rem;
+}
+
+.infoProduct .addToCart img {
+    width: 15px;
+    height: 15px;
+}
+
+.infoProduct .addToCart p {
+    font-weight: 700;
+}
+
+.infoProduct .addToCart:hover {
+    background-color: var(--darkerCyan);
+}
+
+/* Media queries for the responsivenes */
+@media screen and (min-width: 425px) {
+    .container {
+        width: 42vw;
+        height: 52vh;
+        border-radius: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .container figure .imagePhone {
+        display: none;
+    }
+
+    .container figure .imageDesktop {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .infoProduct {
+        padding: 2rem 2.12rem;
+        gap: 1.4rem;
+    }
+
+    .infoProduct .title {
+        font-size: 2.4rem;
+        line-height: 2.3rem;
+    }
+
+    .infoProduct .description {
+        font-size: 15px;
+    }
+
+    .infoProduct .prices .newPrice{
+        font-size: 35px;
+    }
+
+    .infoProduct .prices .oldPrice {
+        font-size: 15px;
+    }
+}
